@@ -10,7 +10,7 @@
   <h1>Mini Loja</h1>
 
   <?php if ($mensagem): ?>
-    <p><strong><?= htmlspecialchars($mensagem) ?></strong></p>
+    <p><strong><?= htmlspecialchars($mensagem) ?></strong> <a href="cadastro.php">Ver a lista de novo</a></p>
   <?php endif; ?>
 
   <h2>Novo produto</h2>

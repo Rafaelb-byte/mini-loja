@@ -3,15 +3,15 @@
 // Recebe o formulário, pede ao modelo (banco.php) e chama a visão (tela.php).
 require __DIR__ . '/banco.php';
 
+$produtos = listarProdutos();
 $mensagem = '';
 
-// o formulário foi enviado? por enquanto, só confirma o que chegou
+// o formulário foi enviado? o produto entra no fim da lista... só nesta página
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = trim($_POST['nome'] ?? '');
     $preco = (float) ($_POST['preco'] ?? 0);
-    $mensagem = 'Recebi: ' . $nome . ', por R$ ' . number_format($preco, 2, ',', '.');
+    $produtos[] = ['nome' => $nome, 'preco' => $preco];
+    $mensagem = 'Entrou na lista: ' . $nome . '.';
 }
-
-$produtos = listarProdutos();
 
 require __DIR__ . '/tela.php';
