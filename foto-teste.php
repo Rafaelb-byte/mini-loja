@@ -1,0 +1,1 @@
+<?php echo "Este arquivo virou um programa no servidor!"; ?>
